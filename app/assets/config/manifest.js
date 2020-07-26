@@ -1,3 +1,3 @@
 //= link_tree ../images
 //= link_directory ../stylesheets .css
-//= bootstrap-sprockets
+//= link_directory ../javascripts .js
