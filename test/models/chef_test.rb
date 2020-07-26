@@ -10,40 +10,39 @@ class ChefTest < ActiveSupport::TestCase
   end
 
   test "name should be peresent" do
-    @chef_test = Chef.new(chefname: '', email: "dezashibi@gmail.com")
-    assert_not @chef_test.valid?
+    @chef.chefname = nil
+    assert_not @chef.valid?
   end
 
   test "name should be less than 30 characters" do
-    @chef_test = Chef.new(chefname: 'a' * 31, email: "dezashibi@gmail.com")
-    assert_not @chef_test.valid?
+    @chef.chefname = 'a' * 31
+    assert_not @chef.valid?
   end
 
   test "email should be peresent" do
-    @chef_test = Chef.new(chefname: 'Navid', email: "")
-    assert_not @chef_test.valid?
+    @chef.email = nil
+    assert_not @chef.valid?
   end
 
   test "email should not be too long" do
-    @chef_test = Chef.new(chefname: 'Navid', email: "a" * 250 + "@example.com")
-    assert_not @chef_test.valid?
+    @chef.email = 'a' * 255 + '@example.com'
+    assert_not @chef.valid?
   end
 
   test "email should accepts correct format" do
     valid_emails = %w[user@email.com navid@dezashibi.com navid+dezashibi@yahoo.co.uk]
 
     valid_emails.each do |valid|
-      @chef_test = Chef.new(chefname: 'Navid', email: valid)
-      assert @chef_test.valid?, "#{valid.inspect} should be valid"
+      @chef.email = valid
+      assert @chef.valid?, "#{valid.inspect} should be valid"
     end
   end
 
   test "email should rejects incorrect format" do
     invalid_emails = %w[user@email @dezashibi.com +dezashibi@yahoo.]
-
     invalid_emails.each do |invalid|
-      @chef_test = Chef.new(chefname: 'Navid', email: invalid)
-      assert_not @chef_test.valid?, "#{invalid.inspect} should be invalid"
+      @chef.email = invalid
+      assert_not @chef.valid?, "#{invalid.inspect} should be invalid"
     end
   end
 
