@@ -10,7 +10,7 @@ class Chef < ApplicationRecord
             format: {with: VALID_EMAIL_REGEXT},
             uniqueness: { case_sensitive: false}
 
-  has_many :recipes
+  has_many :recipes, dependent: :destroy
   has_secure_password
 
   # presence validation for password but it checked by default
