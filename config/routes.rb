@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   # get 'recipes/:id', to: 'recipes#show', as: 'recipe'
   # I can use resource for this, so I do that
   resources :recipes
+
+  get '/signup', to: 'chefs#new'
+  resources :chefs, except: [:new]
+
 end
