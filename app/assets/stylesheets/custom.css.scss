@@ -24,22 +24,22 @@ $jumbotron-default-bg: #07571b ;
 
 .jumbotron {
   background-color: $jumbotron-default-bg;
-}
 
-.jumbotron h1 {
-  color: #fff;
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
+  h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
 
-.jumbotron h2 {
-  color: #fff;
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: -1px;
-  font-weight: bold;
+  h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
 }
 
 .btn-xlarge {
@@ -57,24 +57,24 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
-}
 
-footer a {
-  color: #222;
-}
+  a {
+    color: #222;
+  }
 
-footer small {
-  float: left;
-}
+  small {
+    float: left;
+  }
 
-footer ul {
-  float: right;
-  list-style: none;
-}
+  ul {
+    float: right;
+    list-style: none;
 
-footer ul li {
-  float: left;
-  margin-left: 15px;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
 }
 
 .description {
@@ -91,4 +91,12 @@ footer ul li {
 
 .colormatch a {
   color: $navbar-default-bg;
+}
+
+.recipe-actions {
+  padding-top: 5px;
+
+  a {
+    color: #fff;
+  }
 }
