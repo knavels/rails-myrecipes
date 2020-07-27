@@ -8,4 +8,12 @@
 
 <h4 class="center"><%= @chef.chefname %>'s recipes</h4>
 
-<%= render 'recipes/recipe', obj: @chef.recipes, show_avatar: false %>
+<div align="center">
+  <%= will_paginate @chef_recipes %>
+</div>
+
+<%= render 'recipes/recipe', obj: @chef_recipes, show_avatar: false %>
+
+<div align="center">
+  <%= will_paginate @chef_recipes %>
+</div>
