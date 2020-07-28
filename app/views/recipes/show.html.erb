@@ -19,17 +19,19 @@
       <small>
         <%= @recipe.chef.chefname.capitalize %>
       </small>
-      <div class="pull-right">
-         <%= time_ago_in_words(@recipe.created_at) %> ago
-      </div>
+    <div class="pull-right">
+      <%= time_ago_in_words(@recipe.created_at) %> ago
+    </div>
     </p>
   </div>
   <div class="recipe-actions">
-    <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-xs btn-warning" %>
-    <%= link_to "Delete this recipe", recipe_path(@recipe), method: :delete,
-                class: "btn btn-xs btn-danger",
-                data: { confirm: "Are you sure?"}
-    %>
+    <% if logged_in? && current_chef == @recipe.chef %>
+      <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-xs btn-warning" %>
+      <%= link_to "Delete this recipe", recipe_path(@recipe), method: :delete,
+                  class: "btn btn-xs btn-danger",
+                  data: {confirm: "Are you sure?"}
+      %>
+    <% end %>
     <%= link_to "Return to index", recipes_path, class: "btn btn-xs btn-primary" %>
   </div>
 </div>
